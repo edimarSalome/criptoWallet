@@ -13,9 +13,9 @@ criptoWallet.config(['$routeProvider',
                     controllerAs: '$ctrl'
                 })*/
                 .when('/general', {
-                    templateUrl: 'app/index.html'
-                    //controller: 'generalCtrl',
-                    //controllerAs: '$ctrl'
+                    templateUrl: 'app/index.html',
+                    controller: 'generalCtrl',
+                    controllerAs: '$ctrl'
                 })
                 .otherwise({
                     redirectTo: '/general'

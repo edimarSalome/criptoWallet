@@ -1,0 +1,18 @@
+.cripto-card{
+    padding:1rem;
+    
+    .price-group{
+        font-size:.8rem;
+        
+        .cripto-alias{
+            margin-right:.7rem;
+            color:$grey;
+        }
+        
+        h2{
+            margin:0px;
+            font-weight: normal;
+        }
+    }
+}
+

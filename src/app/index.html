@@ -1,1 +1,25 @@
-<h1>É nois Queiroz!</h1>
+<div ng-if="ready" class="animated fadeIn">
+    <nav>
+        <ul>
+            <li ng-bind="lang.currency" ng-class="{'active':!modePortfolio}" ng-click="modePortfolio = false"></li>
+            <li ng-bind="lang.portfolio" ng-class="{'active':modePortfolio}" ng-click="modePortfolio = true"></li>
+        </ul>
+    </nav>
+    <div ng-if="modePortfolio">
+        <i class="portfolio hero"></i>
+        <p class="page-msg" ng-bind-html="lang.portfolioMemberMsg"></p>
+    </div>
+    <div ng-if="!modePortfolio">
+        <div ng-if="charged" class="cripto-card" ng-repeat="cripto in criptos">
+            <div class="price-group">
+                <span class="cripto-alias" ng-bind="cripto.alias"></span>
+                <span class="text-success" ng-bind="getDailyAmount(cripto)"></span>
+                <h2 ng-bind="getPriceByCripto(cripto)"></h2>
+            </div>
+        </div>
+        <div ng-if="!charged">
+            <i class="loading hero"></i>
+            <p class="page-msg">Loading...</p>
+        </div>
+    </div>
+</div>
