@@ -2,7 +2,8 @@ criptoWallet.controller('generalCtrl',['$scope','$filter', function($scope, $fil
     var $ctrl = this;
     
     $ctrl.construct = function(){
-        $ctrl.setLangEnglish();
+        //$ctrl.setLangEnglish();
+        $ctrl.setLangPtBr();
         $ctrl.setCriptos();
         $ctrl.getCurrentPrices();
         $scope.ready=true;
@@ -12,8 +13,19 @@ criptoWallet.controller('generalCtrl',['$scope','$filter', function($scope, $fil
         $scope.lang = {
             currency:'Currencies',
             portfolio:'My portfolio',
-            portfolioMemberMsg:'Register now and have early access to <b>My Portfolio</b> mode for free.<br><br><small>Ready in January/2018</small>',
-            symbol:'$ '
+            portfolioMemberMsg:'Register now and have early access to <b>My Portfolio</b> mode for free.<br><br><small>Release in January/2018</small>',
+            symbol:'$ ',
+            register:'Register now'
+        };
+    };
+    
+    $ctrl.setLangPtBr = function(){
+        $scope.lang = {
+            currency:'Criptomoedas',
+            portfolio:'Meu portifólio',
+            portfolioMemberMsg:'Cadastre-se e tenha acesso grátis ao modo <b>Meu Portifólio</b>.<br><br><small>Disponível em Janeiro/2018</small>',
+            symbol:'R$ ',
+            register:'Cadastrar agora'
         };
     };
     

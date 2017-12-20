@@ -1,0 +1,22 @@
+button{
+    &.btn{
+        font-size: .9rem;
+        border: 1px solid $text;
+        color:$text;
+        background: transparent;
+        padding: .5rem 1rem;
+        border-radius: 40px;
+        
+        &.btn-register{
+            display:block;
+            margin:0 auto;
+        }
+        
+        &:focus{
+            outline: none;
+            background: $textFaded;
+            color: #fff;
+            border-color: #fff;
+        }
+    }
+}

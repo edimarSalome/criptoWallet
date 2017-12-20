@@ -8,13 +8,17 @@
     <div ng-if="modePortfolio">
         <i class="portfolio hero"></i>
         <p class="page-msg" ng-bind-html="lang.portfolioMemberMsg"></p>
+        <button class="btn btn-register" ng-bind="lang.register"></button>
     </div>
     <div ng-if="!modePortfolio">
         <div ng-if="charged" class="cripto-card" ng-repeat="cripto in criptos">
             <div class="price-group">
                 <span class="cripto-alias" ng-bind="cripto.alias"></span>
                 <span class="text-success" ng-bind="getDailyAmount(cripto)"></span>
-                <h2 ng-bind="getPriceByCripto(cripto)"></h2>
+                <h2>
+                    <span ng-bind="getPriceByCripto(cripto)"></span>
+                    <small style="float:right;color: #666;line-height:26px;" ng-bind="cripto.prices[0].exchange"></small>
+                </h2>
             </div>
         </div>
         <div ng-if="!charged">

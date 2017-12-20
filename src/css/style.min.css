@@ -1,3 +1,9 @@
+.text-success {
+  color: #1cc57e !important; }
+
+.text-danger {
+  color: #f60c4c !important; }
+
 html, body {
   margin: 0px;
   padding: 0px;
@@ -6,8 +12,8 @@ html, body {
   color: #193651; }
   html *, body * {
     box-sizing: border-box; }
-  html .text-success, body .text-success {
-    color: #1cc57e !important; }
+  html *[ng-click], body *[ng-click] {
+    cursor: pointer; }
   html p.page-msg, body p.page-msg {
     width: 100%;
     padding: 0 2rem;
@@ -71,7 +77,23 @@ i {
     font-size: .8rem; }
     .cripto-card .price-group .cripto-alias {
       margin-right: .7rem;
-      color: #ccc; }
+      color: #666; }
     .cripto-card .price-group h2 {
       margin: 0px;
       font-weight: normal; }
+
+button.btn {
+  font-size: .9rem;
+  border: 1px solid #193651;
+  color: #193651;
+  background: transparent;
+  padding: .5rem 1rem;
+  border-radius: 40px; }
+  button.btn.btn-register {
+    display: block;
+    margin: 0 auto; }
+  button.btn:focus {
+    outline: none;
+    background: rgba(25, 54, 81, 0.6);
+    color: #fff;
+    border-color: #fff; }

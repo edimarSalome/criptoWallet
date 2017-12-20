@@ -7,4 +7,9 @@ $danger:#f60c4c;
 $success:#1cc57e;
 $warning:'';
 $info:'';
-$grey:#ccc;
+$grey:#666;
+
+$textFaded:rgba(25,54,81,.6);
+
+.text-success{color:$success !important;}
+.text-danger{color:$danger !important;}
