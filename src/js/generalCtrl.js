@@ -19,9 +19,9 @@ criptoWallet.controller('generalCtrl',['$scope','$filter', '$http', 'paths', fun
     /* ------------- Business model ------*/
     $ctrl.setCriptos = function(data){        
         $scope.criptos = [
-            {name:'Bitcoin', symbol:'', alias:'BTC', marketDataBRL: data.BTC.BRL, marketDataUSD: data.BTC.USD},
-            {name:'Ripple', symbol:'', alias:'XRP', marketDataBRL: data.XRP.BRL, marketDataUSD: data.XRP.USD},
-            {name:'IOTA', symbol:'', alias:'IOT', marketDataBRL: data.IOT.BRL, marketDataUSD: data.IOT.USD}
+            {name:'Bitcoin', symbol:'', alias:'BTC', marketDataBRL: data.BTC.BRL, marketDataUSD: data.BTC.USD, portifolio:0.022},
+            {name:'Ripple', symbol:'', alias:'XRP', marketDataBRL: data.XRP.BRL, marketDataUSD: data.XRP.USD, portifolio:200},
+            {name:'IOTA', symbol:'', alias:'IOT', marketDataBRL: data.IOT.BRL, marketDataUSD: data.IOT.USD, portifolio:32}
         ];
         
         $scope.charged=true;
@@ -59,8 +59,16 @@ criptoWallet.controller('generalCtrl',['$scope','$filter', '$http', 'paths', fun
     };*/
     
     $scope.getPriceByCripto = function(cripto){return $scope.lang.currency==='USD'?$filter('currency')(cripto.marketDataUSD.PRICE, $scope.lang.symbol, 2):$filter('currency')(cripto.marketDataBRL.PRICE, $scope.lang.symbol, 2);};
+    $scope.getPortifolioByCripto = function(cripto){return $scope.lang.currency==='USD'?$filter('currency')(cripto.marketDataUSD.PRICE*cripto.portifolio, $scope.lang.symbol, 2):$filter('currency')(cripto.marketDataBRL.PRICE*cripto.portifolio, $scope.lang.symbol, 2);};
     $scope.getExchangeByCripto = function(cripto){return $scope.lang.currency==='USD'?cripto.marketDataUSD.LASTMARKET:cripto.marketDataBRL.LASTMARKET;};
-    $scope.getDailyAmount = function(cripto){return '+15%';};
+    $scope.getDailyChange = function(cripto){
+        var change = $scope.lang.currency==='USD'?cripto.marketDataUSD.CHANGEPCT24HOUR:cripto.marketDataBRL.CHANGEPCT24HOUR;
+        var value = change>0?'+':'';
+        var classes = change>0?'text-success':change<0?'text-danger':'text-faded';
+        value += $filter('number')(change, 2)+'%';
+        
+        return '<span class="'+classes+'">'+value+'</span>';
+    };
     
     $ctrl.construct();
 }]);

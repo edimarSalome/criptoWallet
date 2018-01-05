@@ -4,6 +4,9 @@
 .text-danger {
   color: #f60c4c !important; }
 
+.text-faded {
+  color: #666 !important; }
+
 html, body {
   margin: 0px;
   padding: 0px;
