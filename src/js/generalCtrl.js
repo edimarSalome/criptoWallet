@@ -19,9 +19,9 @@ criptoWallet.controller('generalCtrl',['$scope','$filter', '$http', 'paths', fun
     /* ------------- Business model ------*/
     $ctrl.setCriptos = function(data){        
         $scope.criptos = [
-            {name:'Bitcoin', symbol:'', alias:'BTC', marketDataBRL: data.BTC.BRL, marketDataUSD: data.BTC.USD, portifolio:0.022},
-            {name:'Ripple', symbol:'', alias:'XRP', marketDataBRL: data.XRP.BRL, marketDataUSD: data.XRP.USD, portifolio:200},
-            {name:'IOTA', symbol:'', alias:'IOT', marketDataBRL: data.IOT.BRL, marketDataUSD: data.IOT.USD, portifolio:32}
+            {name:'Bitcoin', symbol:'', alias:'BTC', marketDataBRL: data.BTC.BRL, marketDataUSD: data.BTC.USD, portifolio:0.02281792},
+            {name:'Ripple', symbol:'', alias:'XRP', marketDataBRL: data.XRP.BRL, marketDataUSD: data.XRP.USD, portifolio:225.53735},
+            {name:'IOTA', symbol:'', alias:'IOT', marketDataBRL: data.IOT.BRL, marketDataUSD: data.IOT.USD, portifolio:32.651}
         ];
         
         $scope.charged=true;
